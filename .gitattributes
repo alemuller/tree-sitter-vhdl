@@ -1,5 +1,5 @@
-Cargo.toml linguist-generated
-binding.gyp linguist-generated
-package.json linguist-generated
-src/** linguist-generated
-bindings/** linguist-generated
+src/** linguist-generated=true
+bindings/** linguist-generated=true
+Cargo.toml linguist-generated=true
+binding.gyp linguist-generated=true
+package.json linguist-generated=true
