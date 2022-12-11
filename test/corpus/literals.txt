@@ -1,0 +1,564 @@
+================================================================================
+Bit string literal - Minimal
+================================================================================
+assert b"";
+assert o"";
+assert x"";
+
+assert ub"";
+assert uo"";
+assert ux"";
+
+assert sb"";
+assert so"";
+assert sx"";
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string)))
+
+================================================================================
+Bit string literal - Length
+================================================================================
+assert   4b"0";
+assert  8ub"0";
+assert 16sb"0";
+
+assert   04o"0";
+assert  08uo"0";
+assert 016so"0";
+
+assert   004x"0";
+assert  008ux"0";
+assert 0016sx"0";
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string)))
+
+================================================================================
+Bit string literal - Bit value
+================================================================================
+assert  b"01";
+assert ub"01";
+assert sb"01";
+
+assert  o"0123_4567";
+assert uo"0123_4567";
+assert so"0123_4567";
+
+assert  x"0123_4567";
+assert ux"0123_4567_89AB_CDEF";
+assert sx"0123_4567_89AB_CDEF";
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string))
+  (assert_stmt (bit_string)))
+
+================================================================================
+Bit string literal - std_match
+================================================================================
+assert  b"--";
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (bit_string)))
+
+================================================================================
+Integer decimal literals
+================================================================================
+assert 0;
+assert 0000;
+
+assert 1;
+assert 1234;
+
+assert 00_00;
+assert 12_34;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer)))
+
+================================================================================
+Integer decimal literals
+================================================================================
+assert 0;
+assert 0000;
+
+assert 1;
+assert 1234;
+
+assert 00_00;
+assert 12_34;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer)))
+
+================================================================================
+Integer decimal literals - Exponent
+================================================================================
+assert 0e0;
+assert 0000e0;
+
+assert 1e1;
+assert 1234e1234;
+
+assert 00_00e0;
+assert 12_34e+1;
+assert 12_34e+1234;
+
+assert 12_34e-1;
+assert 12_34e-1234;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer)))
+
+================================================================================
+Real decimal literals
+================================================================================
+assert 0.0;
+assert 00.0;
+
+assert 1.0;
+assert 12.34;
+
+assert 00_00.0000;
+assert 12_34.5678;
+
+assert 00_00.00_00;
+assert 12_34.56_78;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real)))
+
+================================================================================
+Real decimal literals - Exponent
+================================================================================
+assert 0.0e0;
+assert 00.00e0;
+
+assert 1.0e1;
+assert 12.34e1234;
+assert 1.0e-1;
+assert 12.34e-1234;
+assert 1.0e-1;
+assert 12.34e-1234;
+
+assert 12_34.5678e1;
+assert 12_34.56_78e1245;
+assert 12_34.5678e+1;
+assert 12_34.56_78e+1245;
+assert 12_34.5678e-1;
+assert 12_34.56_78e-1245;
+
+assert 12_34.56_78e1;
+assert 12_34.56_78e1245;
+assert 12_34.56_78e+1;
+assert 12_34.56_78e+1245;
+assert 12_34.56_78e-1;
+assert 12_34.56_78e-1245;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real)))
+
+================================================================================
+Integer based literals - Base
+================================================================================
+assert   2#1#;
+assert   3#2#;
+assert   4#3#;
+assert   5#4#;
+assert   6#5#;
+assert   7#6#;
+assert   8#7#;
+assert   9#8#;
+assert  10#9#;
+assert  11#A#;
+assert  12#B#;
+assert  13#C#;
+assert  14#D#;
+assert  15#E#;
+assert  16#F#;
+
+assert  02#1#;
+assert  03#2#;
+assert  04#3#;
+assert  05#4#;
+assert  06#5#;
+assert  07#6#;
+assert  08#7#;
+assert  09#8#;
+assert 010#9#;
+assert 011#A#;
+assert 012#B#;
+assert 013#C#;
+assert 014#D#;
+assert 015#E#;
+assert 016#F#;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer)))
+
+================================================================================
+Integer based literals - Exponent
+================================================================================
+assert 16#e1#e1;
+assert 16#e1#e+1;
+assert 16#e1#e-1;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (integer))
+  (assert_stmt (integer))
+  (assert_stmt (integer)))
+
+================================================================================
+Real based literals
+================================================================================
+assert  2#0.0#;
+assert 16#0.0#;
+
+assert 16#01234567.89abcdef#;
+assert 16#01234567.89ABCDEF#;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real)))
+
+================================================================================
+Real based literals - Exponent
+================================================================================
+assert 16#E1.E1#E1;
+assert 16#E1.E1#E+1;
+assert 16#E1.E1#E-1;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (real))
+  (assert_stmt (real))
+  (assert_stmt (real)))
+
+================================================================================
+Physical literals
+================================================================================
+assert 100ns;
+assert 100 ns;
+assert 100   ns;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (physical (integer) (identifier)))
+  (assert_stmt (physical (integer) (identifier)))
+  (assert_stmt (physical (integer) (identifier))))
+
+================================================================================
+Physical literals - Integer coefficient
+================================================================================
+assert 1 E1;
+assert 2e+2 E1;
+
+assert 16#E1# E1;
+assert 16#E1#E1 E1;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (physical (integer) (identifier)))
+  (assert_stmt (physical (integer) (identifier)))
+  (assert_stmt (physical (integer) (identifier)))
+  (assert_stmt (physical (integer) (identifier))))
+
+================================================================================
+Physical literals - Real coefficient
+================================================================================
+assert 1.1 E1;
+assert 2.2e+2 E1;
+
+assert 16#E1.E1# E1;
+assert 16#E1.E1#E1 E1;
+--------------------------------------------------------------------------------
+
+(design_file
+  (assert_stmt (physical (real) (identifier)))
+  (assert_stmt (physical (real) (identifier)))
+  (assert_stmt (physical (real) (identifier)))
+  (assert_stmt (physical (real) (identifier))))
+
+================================================================================
+String
+================================================================================
+report "";
+report " ";
+report " ";
+report "'";
+report """";
+report "_";
+report "\";
+report "--";
+report "/*aa*/";
+report "010";
+report "and";
+report ">=";
+report "sll";
+report "+";
+report "abs";
+report "**";
+report "^";
+report "$";
+report ".";
+report "|";
+report "\";
+report "*";
+report "?";
+report "+";
+report "[";
+report "]";
+report "(";
+report ")";
+report "{";
+report "}";
+report "#";
+--------------------------------------------------------------------------------
+
+(design_file
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string))
+  (report_stmt (string)))
+
+================================================================================
+Character
+================================================================================
+report ' ';
+report ' ';
+report ''';
+report '"';
+report '`';
+report '#';
+report '"';
+report '!';
+report '$';
+report '%';
+report '\';
+report '^';
+report '{';
+report '}';
+report ''';
+report '~';
+report '¡';
+report '¢';
+report '£';
+report '¤';
+report '¥';
+report '¦';
+report '§';
+report '¨';
+report '©';
+report 'ª';
+report '«';
+report '¬';
+report '®';
+report '¯';
+report '°';
+report '±';
+report '²';
+report '³';
+report '´';
+report 'µ';
+report '¶';
+report '·';
+report '¸';
+report '¹';
+report 'º';
+report '»';
+report '¼';
+report '½';
+report '¾';
+report '¿';
+report '×';
+report '÷';
+report '-';
+---
+
+(design_file
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character))
+  (report_stmt (character)))

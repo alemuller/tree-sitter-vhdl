@@ -1,0 +1,3 @@
+*        linguist-generated
+*.js    -linguist-generated
+test/** -linguist-generated
